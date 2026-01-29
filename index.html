@@ -3,80 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KZ Anime</title>
+    <title>Directorio Anime</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            background: #000; 
+            overflow: hidden; 
+        }
 
         .visor-contenedor {
             width: 100%;
             height: 100vh;
-            overflow: hidden;
+            overflow: hidden; /* Cambiado a hidden para controlar mejor el recorte */
             position: relative;
+            -webkit-overflow-scrolling: touch;
         }
 
         iframe {
             width: 100%;
-            height: 175%; 
+            /* Altura ajustada para mostrar solo hasta las portadas */
+            height: 1450px; 
             border: none;
-        }
-
-        .capa-superior {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 42px;
-            z-index: 10;
-            pointer-events: none; 
-            display: flex;
-            align-items: center;
-        }
-
-        /* EL PARCHE: Color #141414 es el gris real de la web */
-        .parche-exacto {
-            width: 147px; 
-            height: 56px;
-            background: #202020; 
-            display: flex;
-            align-items: center;
-            padding-left: 12px;
-            pointer-events: auto;
-        }
-
-        /* LA K ESTILO FÉNIX */
-        .k-fuego {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 36px;
-            color: #ff3300; /* Rojo fuego */
-            text-shadow: 0px 0px 10px #ff6600, 2px 2px 2px #000;
-            margin-right: 5px;
-        }
-
-        /* TEXTO Z ANIME */
-        .z-texto {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 20px;
-            color: #ffffff;
-            text-transform: uppercase;
-        }
-
-        /* Ocultar elementos molestos */
-        .at-share-dock, .social-share-bar, #at-share-dock {
-            display: none !important;
+            display: block;
+            /* Desplazamos el iframe hacia arriba para ocultar la parte inferior */
+            margin-top: -250px;
+            margin-top: +0px;
         }
     </style>
 </head>
 <body>
 
-    <div class="capa-superior">
-        <div class="parche-exacto">
-            <span class="k-fuego">K</span>
-            <span class="z-texto">Z Anime</span>
-        </div>
-    </div>
-
     <div class="visor-contenedor">
-        <iframe src="https://ww1.animefenix.vip/"></iframe>
+        <iframe src="https://animefenix2.tv/directorio/anime?q=Evangelio"></iframe>
     </div>
 
 </body>
