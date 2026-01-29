@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KZ Anime</title>
     <style>
-        /* Fondo negro y sin bordes */
         body, html { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
 
-        /* Contenedor que recorta el texto largo de abajo */
+        /* Contenedor que corta el texto basura de abajo */
         .visor-contenedor {
             width: 100%;
             height: 100vh;
@@ -16,34 +15,35 @@
             position: relative;
         }
 
-        /* Iframe ajustado para ocultar el texto basura */
+        /* Iframe para ocultar el texto largo pero ver episodios 2026 */
         iframe {
             width: 100%;
-            height: 175%; /* Empuja el texto largo fuera de la vista */
+            height: 175%; 
             border: none;
         }
 
-        /* EL PARCHE DE LA ESQUINA (Tu nuevo logo actualizado) */
+        /* EL PARCHE SIN RAYAS */
         .parche-logo {
             position: absolute;
             top: 0;
             left: 0;
-            width: 190px; /* Cubre exactamente el logo y nombre de AnimeFenix */
-            height: 56px;  /* Altura de la barra original */
-            background: #1a1a1a; /* Color de fondo de la web original */
+            width: 200px; /* Ancho para tapar AnimeFenix */
+            height: 56px; 
+            background: #1a1a1a; /* Color exacto de la barra original */
             display: flex;
             align-items: center;
-            padding-left: 8px;
+            justify-content: flex-start;
             z-index: 9999;
         }
 
         .logo-img {
-            height: 44px; /* Tamaño ajustado para tu logo de Picsart */
+            height: 48px; /* Ajuste para que llene bien el espacio */
             width: auto;
+            display: block;
         }
 
-        /* Bloqueo de la barra de redes sociales */
-        .at-share-dock, .social-share-bar, #at-share-dock {
+        /* OCULTAR BARRA DE REDES TOTALMENTE */
+        .at-share-dock, .social-share-bar, #at-share-dock, .at4-share-outer {
             display: none !important;
             visibility: hidden !important;
         }
