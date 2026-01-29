@@ -1,51 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KZ Anime</title>
     <style>
-        /* Eliminamos margenes y fijamos el fondo negro */
+        /* Fondo negro total y sin barras de desplazamiento externas */
         body, html { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
-        
-        /* Tu barra de KZ ANIME - Más delgada para no tapar la lupa */
-        .kz-header {
-            background: #1a1a1a;
-            color: #ff0000;
-            padding: 8px;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            border-bottom: 2px solid #ff0000;
-            position: relative;
-            z-index: 999;
-        }
 
-        /* Contenedor inteligente que recorta el "texto de relleno" de abajo */
-        .contenedor-limpio {
+        /* Contenedor que recorta el texto largo de abajo */
+        /* Ajustamos el alto para que se vea hasta 'Episodios 2026' y oculte el resto */
+        .visor-limpio {
             width: 100%;
-            height: calc(100vh - 40px); /* Ajusta el alto total */
+            height: 100vh; 
             overflow: hidden;
             position: relative;
         }
 
-        /* El marco del anime ajustado */
+        /* El iframe donde vive la web original */
         iframe {
             width: 100%;
-            height: 120%; /* Lo hacemos más alto para "empujar" el texto de abajo fuera de vista */
+            height: 150%; /* Más alto para empujar el texto basura hacia abajo */
             border: none;
-            margin-top: 0px; /* Si tapa la lupa, cambia a 5px o 10px */
         }
 
-        /* COMANDO PARA OCULTAR LA BARRA DE REDES (CSS INYECTADO) */
-        .at-share-dock, .social-share-bar, .at-expanding-share-button {
+        /* CAPA DE MODIFICACIÓN (Inyectamos tu logo sobre el de ellos) */
+        .capa-logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px; /* Tapamos la barra original */
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            z-index: 1000;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .logo-k {
+            height: 45px;
+            filter: drop-shadow(0px 0px 5px #ff4500); /* Efecto fénix/fuego */
+        }
+
+        .texto-logo {
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* OCULTAR BARRA DE REDES SOCIALES TOTALMENTE */
+        .at-share-dock, .social-share-bar, #at-share-dock, .at4-share-outer {
             display: none !important;
+            opacity: 0 !important;
             visibility: hidden !important;
         }
     </style>
 </head>
 <body>
-    <div class="kz-header">KZ ANIME</div>
-    <div class="contenedor-limpio">
+
+    <div class="capa-logo">
+        <img src="https://i.ibb.co/mF9f8Yn/k-fenix.png" class="logo-k" alt="K">
+        <span class="texto-logo">Z Anime</span>
+    </div>
+
+    <div class="visor-limpio">
         <iframe src="https://ww1.animefenix.vip/"></iframe>
     </div>
+
 </body>
 </html>
