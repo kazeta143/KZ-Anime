@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
+        /* Eliminamos margenes y fijamos el fondo negro */
         body, html { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
         
-        /* Tu Barra Personalizada de KZ Anime */
+        /* Tu barra de KZ ANIME - Más delgada para no tapar la lupa */
         .kz-header {
             background: #1a1a1a;
             color: #ff0000;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
             font-family: Arial, sans-serif;
             font-weight: bold;
             border-bottom: 2px solid #ff0000;
+            position: relative;
+            z-index: 999;
         }
 
-        /* Contenedor que oculta la basura de la web original */
+        /* Contenedor inteligente que recorta el "texto de relleno" de abajo */
         .contenedor-limpio {
             width: 100%;
-            height: 100%;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
+            height: calc(100vh - 40px); /* Ajusta el alto total */
+            overflow: hidden;
+            position: relative;
         }
 
-        /* El marco donde se carga el anime */
+        /* El marco del anime ajustado */
         iframe {
             width: 100%;
-            height: 100%;
+            height: 120%; /* Lo hacemos más alto para "empujar" el texto de abajo fuera de vista */
             border: none;
-            /* Subimos la web para que el logo de ellos quede escondido debajo de tu barra */
-            margin-top: -50px; 
+            margin-top: 0px; /* Si tapa la lupa, cambia a 5px o 10px */
         }
 
-        /* BLOQUEO DE LA BARRA DE REDES SOCIALES */
-        .at-share-dock, .social-share-bar, #at-share-dock {
+        /* COMANDO PARA OCULTAR LA BARRA DE REDES (CSS INYECTADO) */
+        .at-share-dock, .social-share-bar, .at-expanding-share-button {
             display: none !important;
-            opacity: 0 !important;
+            visibility: hidden !important;
         }
     </style>
 </head>
