@@ -14,7 +14,6 @@
             position: relative;
         }
 
-        /* El iframe ocupa todo, permitiendo clics en la lupa y menú */
         iframe {
             width: 100%;
             height: 175%; 
@@ -22,8 +21,7 @@
             z-index: 1;
         }
 
-        /* CAPA DEL LOGO: "pointer-events: none" hace que los clics pasen de largo hacia abajo */
-        .capa-interactiva {
+        .capa-maestra {
             position: absolute;
             top: 0;
             left: 0;
@@ -32,25 +30,27 @@
             z-index: 10;
             display: flex;
             align-items: center;
-            pointer-events: none; /* CLAVE: Los toques atraviesan esta capa */
+            pointer-events: none; 
         }
 
-        .parche-logo {
+        .parche-unificado {
             width: 200px; 
             height: 56px;
-            background: #1a1a1a; /* Color exacto de la web */
+            background-color: #1a1a1a; /* Gris original */
             display: flex;
             align-items: center;
-            padding-left: 8px;
-            pointer-events: auto; /* Solo esta parte bloquea clics para proteger tu logo */
+            padding-left: 10px;
+            pointer-events: auto;
         }
 
         .logo-img {
             height: 44px;
             width: auto;
+            /* ESTO ELIMINA EL CHOQUE DE COLORES */
+            mix-blend-mode: lighten; 
+            filter: contrast(1.1);
         }
 
-        /* Ocultar basura de la web original */
         .at-share-dock, .social-share-bar, #at-share-dock {
             display: none !important;
         }
@@ -58,8 +58,8 @@
 </head>
 <body>
 
-    <div class="capa-interactiva">
-        <div class="parche-logo">
+    <div class="capa-maestra">
+        <div class="parche-unificado">
             <img src="https://www.dropbox.com/scl/fi/6e39t9bg8srxin0jte24j/Picsart_26-01-29_05-29-06-512.png?rlkey=gwlxglcn7ewbevpmqa4nsspxs&st=a8kmpga7&dl=1" class="logo-img">
         </div>
     </div>
