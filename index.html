@@ -5,55 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KZ Anime</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden; }
+        /* Fondo total unificado */
+        body, html { margin: 0; padding: 0; height: 100%; background: #1a1a1a; overflow: hidden; }
 
+        /* Contenedor que recorta el texto basura de abajo */
         .visor-contenedor {
             width: 100%;
             height: 100vh;
             overflow: hidden;
             position: relative;
+            background: #1a1a1a;
         }
 
+        /* Iframe para ocultar el texto largo pero ver episodios 2026 */
         iframe {
             width: 100%;
             height: 175%; 
             border: none;
+            margin-top: 0px;
         }
 
-        /* PARCHE SIN RAYAS - COLOR SINCRONIZADO */
-        .parche-logo {
+        /* NUEVA BARRA COMPLETA UNIFICADA */
+        .barra-superior {
             position: absolute;
             top: 0;
             left: 0;
-            width: 200px; 
+            width: 100%;
             height: 56px; 
-            /* Este es el color exacto de la barra de AnimeFenix */
-            background: #1a1a1a; 
+            background: #1a1a1a; /* Color exacto de AnimeFenix */
             display: flex;
             align-items: center;
-            padding-left: 8px;
+            justify-content: space-between;
             z-index: 9999;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .logo-seccion {
+            display: flex;
+            align-items: center;
         }
 
         .logo-img {
-            height: 44px;
+            height: 42px;
             width: auto;
-            display: block;
-            /* Suaviza los bordes si la imagen tiene restos de otro color */
-            filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
         }
 
-        /* OCULTAR REDES SOCIALES */
-        .at-share-dock, .social-share-bar, #at-share-dock, .at4-share-outer {
+        /* Estilo para los iconos de la derecha para que resalten */
+        .iconos-derecha {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Ocultar elementos molestos */
+        .at-share-dock, .social-share-bar, #at-share-dock {
             display: none !important;
-            visibility: hidden !important;
         }
     </style>
 </head>
 <body>
 
-    <div class="parche-logo">
-        <img src="https://www.dropbox.com/scl/fi/6e39t9bg8srxin0jte24j/Picsart_26-01-29_05-29-06-512.png?rlkey=gwlxglcn7ewbevpmqa4nsspxs&st=a8kmpga7&dl=1" class="logo-img">
+    <div class="barra-superior">
+        <div class="logo-seccion">
+            <img src="https://www.dropbox.com/scl/fi/6e39t9bg8srxin0jte24j/Picsart_26-01-29_05-29-06-512.png?rlkey=gwlxglcn7ewbevpmqa4nsspxs&st=a8kmpga7&dl=1" class="logo-img">
+        </div>
+        
+        <div class="iconos-derecha">
+            <span style="position: relative;">🔔<b style="position: absolute; top: -5px; right: -8px; background: red; color: white; border-radius: 50%; padding: 2px 5px; font-size: 10px;">1</b></span>
+            <span>⋮</span>
+            <span>🔍</span>
+        </div>
     </div>
 
     <div class="visor-contenedor">
