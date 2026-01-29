@@ -1,72 +1,26 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KZ Anime</title>
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; background: #1a1a1a; overflow: hidden; }
+<style>
+    .parche-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 210px;
+        height: 56px;
+        /* Usamos el color exacto de la barra para que no se note el corte */
+        background-color: #1a1a1a; 
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        z-index: 9999;
+    }
 
-        .visor-contenedor {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
+    .logo-img {
+        height: 42px;
+        width: auto;
+        /* Esto elimina el fondo negro de tu imagen de Dropbox */
+        mix-blend-mode: screen; 
+    }
+</style>
 
-        iframe {
-            width: 100%;
-            height: 175%; 
-            border: none;
-            z-index: 1;
-        }
-
-        .capa-maestra {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 56px;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            pointer-events: none; 
-        }
-
-        .parche-unificado {
-            width: 200px; 
-            height: 56px;
-            background-color: #1a1a1a; /* Gris original */
-            display: flex;
-            align-items: center;
-            padding-left: 10px;
-            pointer-events: auto;
-        }
-
-        .logo-img {
-            height: 44px;
-            width: auto;
-            /* ESTO ELIMINA EL CHOQUE DE COLORES */
-            mix-blend-mode: lighten; 
-            filter: contrast(1.1);
-        }
-
-        .at-share-dock, .social-share-bar, #at-share-dock {
-            display: none !important;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="capa-maestra">
-        <div class="parche-unificado">
-            <img src="https://www.dropbox.com/scl/fi/6e39t9bg8srxin0jte24j/Picsart_26-01-29_05-29-06-512.png?rlkey=gwlxglcn7ewbevpmqa4nsspxs&st=a8kmpga7&dl=1" class="logo-img">
-        </div>
-    </div>
-
-    <div class="visor-contenedor">
-        <iframe src="https://ww1.animefenix.vip/"></iframe>
-    </div>
-
-</body>
-</html>
+<div class="parche-logo">
+    <img src="https://www.dropbox.com/scl/fi/6e39t9bg8srxin0jte24j/Picsart_26-01-29_05-29-06-512.png?rlkey=gwlxglcn7ewbevpmqa4nsspxs&st=xfnsizrq&dl=1" class="logo-img">
+</div>
